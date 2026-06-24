@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///Users/alicegillette/Downloads/google_domains_case_study.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Domains Migration — Case Study | Alice Groesbeck</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F8F6;
+    --text: #1A1F2E;
+    --text-mid: #4A5060;
+    --text-light: #8A8F9E;
+    --accent: #3B7A8C;
+    --accent-light: #EBF4F6;
+    --rule: #D4D0C8;
+    --white: #FFFFFF;
+    --stat-bg: #1A1F2E;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-back {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .nav-back:hover { text-decoration: underline; }
+
+  /* HERO */
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .meta-item span {
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--stat-bg);
+    color: var(--white);
+    padding: 2.5rem 2rem;
+    margin: 0;
+  }
+
+  .stats-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-item {}
+  .stat-num {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #7ABFCC;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 5rem;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* TIMELINE — the signature element */
+  .timeline {
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .timeline-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-track {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--rule));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 1.75rem 1.5rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.6rem;
+    top: 0.45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  .timeline-step {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+  }
+
+  .callout p {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* LINKS SECTION */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .link-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    text-decoration: none;
+    background: var(--white);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(59,122,140,0.1);
+  }
+
+  .link-type {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.35rem;
+  }
+
+  .link-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .link-arrow {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  /* OUTCOME */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .outcome-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .outcome-num {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .outcome-label {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.4;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .content { padding: 2.5rem 1.25rem 4rem; }
+    .stats-bar { padding: 2rem 1.25rem; }
+    nav { padding: 1rem 1.25rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://alicefanclub.com/">Alice Groesbeck</a>
+  <a class="nav-back" href="https://alicefanclub.com/">← Back to portfolio</a>
+</nav>
+
+<div class="hero">
+  <p class="eyebrow">Case Study &nbsp;·&nbsp; Squarespace &nbsp;·&nbsp; 2023–2024</p>
+  <h1>How I built the content system behind Squarespace's largest-ever customer migration</h1>
+  <p class="hero-sub">When Squarespace acquired Google Domains — 9 million domains across millions of customers — I designed and executed the full content strategy: from internal stakeholder alignment to customer-facing resources across every channel.</p>
+  <div class="meta-row">
+    <div class="meta-item"><label>Role</label><span>Technical Writer &amp; Content Strategist</span></div>
+    <div class="meta-item"><label>Scope</label><span>Multi-channel content system</span></div>
+    <div class="meta-item"><label>Scale</label><span>Millions of migrating customers</span></div>
+    <div class="meta-item"><label>Timeline</label><span>Sept 2023 – Nov 2024</span></div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">88–92%</span>
+      <span class="stat-label">Self-service deflection rate (industry avg: ~60%)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">9M+</span>
+      <span class="stat-label">Domains migrated from Google to Squarespace</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Distinct content channels coordinated</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Cross-functional teams aligned</span>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <p class="section-label">Background</p>
+    <h2>A Slack message, a very fast timeline, and 9 million domains</h2>
+    <p>In June 2023, Squarespace entered into a definitive agreement to acquire Google Domains — approximately 9 million domains across millions of customers. It was the company's largest-ever customer acquisition, and it created an immediate content challenge: how do you help millions of people understand what just happened to their domain, feel confident in the transition, and find answers without flooding support?</p>
+    <p>I found out about the acquisition the same way most of the content team did — a Slack message from a Product Manager who'd just heard about it in an all-hands. The turnaround was going to be fast. My PM asked me to help shape the content strategy section of the product brief, and I quickly realized the scope went far beyond writing a few guides.</p>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Problem</p>
+    <h2>A Help Center that needed more structure for domains-first customers</h2>
+    <p>Before the acquisition, Squarespace had a Domains section in the Help Center — but it wasn't structured for customers who were primarily or exclusively here for domains. The existing categories were broad and designed around customers who already had a Squarespace website. That was fine for existing users, but it wasn't going to work for millions of incoming customers whose entire relationship with Squarespace was through a domain name.</p>
+    <p>The incoming customer base was unlike any Squarespace had served before: domains-first and domains-only customers with no website subscription, no familiarity with the Squarespace ecosystem, and a very specific set of needs. They needed to be able to find answers fast, without wading through content built for a different kind of customer.</p>
+    <p>The content needed a structural overhaul — more specific categories, clearer navigation, and in some cases, entirely new sections. Domains security documentation, for example, is detailed enough that it warranted its own dedicated Privacy &amp; Security section, separate from the general Squarespace security content, to keep it from getting buried or mixed in with unrelated guides.</p>
+
+    <div class="callout">
+      <p>"We realized this wasn't just a writing project. It was: how do you build a content system that makes millions of people who didn't choose you feel genuinely welcomed and supported?"</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Approach</p>
+    <h2>Internal alignment first. Customer clarity second.</h2>
+    <p>My first decision was that nothing customer-facing could go out until internal alignment was solid. With a migration at this scale, agents, solutions managers, and stakeholders across multiple teams all needed to be working from the same information — and that information was changing fast as milestones shifted.</p>
+
+    <div class="timeline-label">How the content system came together</div>
+    <div class="timeline">
+      <div class="timeline-track">
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 1 — Internal</p>
+          <p class="timeline-title">Stakeholder wiki (source of truth)</p>
+          <p class="timeline-desc">In partnership with a senior technical writer on the internal content team, built a Confluence wiki tracking every milestone, what documentation was changing or releasing at each stage, and what was and wasn't happening. This became the single source of truth that stakeholders, solutions managers, and live chat agents could follow and link to — instead of interrupting the content team for updates constantly.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 2 — Help Center</p>
+          <p class="timeline-title">Help Center restructure: 4 categories expanded to 11</p>
+          <p class="timeline-desc">Developed the content strategy and structure for the customer-facing Help Center, expanding the Domains section from 4 broad categories to 11 specific ones — including new sections for Transferring Domains To/From Squarespace, Registering Squarespace Domains, Redirecting &amp; Moving Domains, and a dedicated Privacy &amp; Security section for domains (kept separate from general Squarespace security content because the domains security documentation is detailed and deserves its own home). The Domains hub now contains 140+ guides. Created the Domains Basics hub guide as the structured entry point for all domain customers, orienting them to where they needed to go rather than trying to answer everything in one place.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 3 — Cross-functional</p>
+          <p class="timeline-title">Customer-facing newsroom blog</p>
+          <p class="timeline-desc">This was an all-hands-on-deck situation. I partnered with the Marketing team on the customer-facing announcement blog — my focus was the Help Center content strategy, but we all rallied together on the broader communication. The editorial goal was clear: this piece should say "you're in good hands, here's why" — reassuring, warm, and written for someone who may feel blindsided by suddenly being a Squarespace customer. Technical detail was deliberately left out, keeping the piece readable and leaving room to link out to the Help Center.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 4 — Help Center</p>
+          <p class="timeline-title">"About the Google Domains migration" article</p>
+          <p class="timeline-desc">Repurposed the blog's raw material into a dedicated Help Center article with all the technical depth: what happened to contributors and permissions, what features are unavailable for migrated domains, how to log in for the first time. Separating the reassurance from the technical detail was a deliberate editorial call — let each piece do one job well.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 5 — Community</p>
+          <p class="timeline-title">Forum post for real-time feedback</p>
+          <p class="timeline-desc">Published to the Squarespace community forum to create a channel for real-time questions and surface emerging issues back to the product team. Forum threads became a live signal for what customers were actually confused about.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-step">Step 6 — Video &amp; Agent Tools</p>
+          <p class="timeline-title">YouTube tutorials + Zendesk agent workflows</p>
+          <p class="timeline-desc">Coordinated with the YouTube tutorial series to ensure video content linked out to the Help Center, and partnered with the Solutions Manager responsible for Zendesk agent workflows to make sure agents had the same information customers did — aligned language, consistent answers.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Work</p>
+    <h2>Live content you can see</h2>
+    <p>The content system built for this migration is still live and actively maintained. Here's a sample of the published work:</p>
+
+    <div class="links-grid">
+      <a class="link-card" href="https://newsroom.squarespace.com/blog/googledomains" target="_blank" rel="noopener">
+        <span class="link-type">Newsroom Blog</span>
+        <span class="link-title">Squarespace Enters Definitive Agreement to Acquire Google Domains Assets</span>
+        <span class="link-arrow">View →</span>
+      </a>
+      <a class="link-card" href="https://support.squarespace.com/hc/en-us/articles/17131164996365-About-the-Google-Domains-migration-to-Squarespace" target="_blank" rel="noopener">
+        <span class="link-type">Help Center Article</span>
+        <span class="link-title">About the Google Domains migration to Squarespace</span>
+        <span class="link-arrow">View →</span>
+      </a>
+      <a class="link-card" href="https://support.squarespace.com/hc/en-us/categories/200290497" target="_blank" rel="noopener">
+        <span class="link-type">Help Center Hub</span>
+        <span class="link-title">Domains — full category with dedicated navigation</span>
+        <span class="link-arrow">View →</span>
+      </a>
+      <a class="link-card" href="https://support.squarespace.com/hc/en-us/articles/205812088-Domains-basics" target="_blank" rel="noopener">
+        <span class="link-type">Hub Guide</span>
+        <span class="link-title">Domains basics — the starting point for all domain customers</span>
+        <span class="link-arrow">View →</span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=n4ia65GHVgA&amp;list=PLJP0e2ItPOM5wVGUjQimcIeOMte-pGtYa" target="_blank" rel="noopener">
+        <span class="link-type">Video Tutorials</span>
+        <span class="link-title">Squarespace Domains video tutorial series (YouTube)</span>
+        <span class="link-arrow">View →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Outcomes</p>
+    <h2>The content system worked</h2>
+    <p>By November 2024, Squarespace completed the Google Domains migration and became one of the leading domain registrars in the world. The content infrastructure built for this project contributed directly to self-service performance that significantly exceeded industry benchmarks.</p>
+
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <span class="outcome-num">9M</span>
+        <span class="outcome-label">Domains migrated to Squarespace over the one-year project</span>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">15</span>
+        <span class="outcome-label">Major features launched by the team during the migration period</span>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">4 → 11</span>
+        <span class="outcome-label">Domains Help Center categories expanded to serve domains-first customers</span>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">140+</span>
+        <span class="outcome-label">Guides in the Domains Help Center — all actively maintained through 2026</span>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">88–92%</span>
+        <span class="outcome-label">Self-service deflection rate (industry avg: ~60%)</span>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">Still live</span>
+        <span class="outcome-label">All content actively maintained and updated through 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">What I learned</p>
+    <h2>Internal alignment is the first content deliverable</h2>
+    <p>The most important strategic decision I made on this project was sequencing — building the internal wiki before anything customer-facing went out. It kept 15+ stakeholders working from the same information, freed the content team from fielding constant status requests, and meant that when customer-facing content launched, the internal team was already confident in it.</p>
+    <p>The second lesson was the value of editorial separation. The newsroom blog and the Help Center article covered the same event, but they served completely different jobs: one reassured, one informed. Trying to do both in one document would have made both worse. Letting each piece do exactly one thing made both more effective.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Alice Groesbeck &nbsp;·&nbsp; <a href="https://alicefanclub.com/">alicefanclub.com</a> &nbsp;·&nbsp; <a href="mailto:alicegbeckprojects@gmail.com">alicegbeckprojects@gmail.com</a></p>
+</footer>
+
+
+
+</body></html>
